@@ -85,4 +85,21 @@ You would use them just like you would with their native counterparts, including
 You can create an interactive shell by doing one of the following:
 
 - `docker-compose run -it --entrypoint /bin/bash <SERVICE>`
--  `docker compose exec -it <SERVICE> /bin/sh` 
+-  `docker compose exec -it <SERVICE> /bin/sh`
+
+## Laravel Configuration
+Copy `.env_example` to `.env` and set the following variables:
+
+APP_URL=https://crm_app.local:44301/
+
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=abc_db
+DB_USERNAME=laravel
+DB_PASSWORD=secret
+
+SESSION_DRIVER=redis
+CACHE_DRIVER=redis
+REDIS_HOST=redis
+

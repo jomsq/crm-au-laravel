@@ -1,5 +1,5 @@
 
-# Laravel Docker Workflow
+# Laravel Docker
 
 This is a pretty simplified, but complete, workflow for using Docker and Docker Compose with Laravel development. The included docker-compose.yml file, Dockerfiles, and config files, set up a LEMP stack powering a Laravel application in the `code` directory.
 
@@ -16,22 +16,17 @@ This is a pretty simplified, but complete, workflow for using Docker and Docker 
 - `cron` - Easily use cron to schedule periodic commands.
 
 
-## Getting Started
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/GwgwgoWCm8Q/0.jpg)](https://www.youtube.com/watch?v=GwgwgoWCm8Q)
-
-
 ### Configuration Settings
 Copy `.env_example` to `.env` and set the following variables:
 
 #### Application Settings
-- `COMPOSE_PROJECT_NAME=abc_app` Used in the docker-compose.yml file to namespace the services.
-- `APP_DOMAIN=abc_app.local` - Used in the nginx service to automatically create a self-signed certificate for this domain.
+- `COMPOSE_PROJECT_NAME=crm_app` Used in the docker-compose.yml file to namespace the services.
+- `APP_DOMAIN=crm_app.local` - Used in the nginx service to automatically create a self-signed certificate for this domain.
 - `PATH_TO_CODE=../code` - Location of the code that is used to configure map volumes into the containers
 
 #### Docker Container Versions
 The following are used to set the container versions for the services. Here is an example configuration:
-- `PHP_VERSION=8.0`
+- `PHP_VERSION=8.2`
 - `MYSQL_VERSION=5.7.32`
 - `NODE_VERSION=13.7`
 - `REDIS_VERSION=latest`

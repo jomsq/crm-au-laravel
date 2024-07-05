@@ -4,7 +4,7 @@ Before you begin, make sure you have the following installed:
 
 - [PHP](https://www.php.net/downloads) (v8.2 or later)
 - [Composer](https://getcomposer.org/)
-- [MySQL](https://www.mysql.com/downloads/) or another database supported by Laravel
+- [MySQL](https://www.mysql.com/downloads/) 
 - [Docker] (https://docs.docker.com/docker-for-mac/install/)
 
 You can verify the versions of these tools by running the following commands:

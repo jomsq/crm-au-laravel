@@ -68,18 +68,11 @@ For local development, update your Operating System's host file using the code s
 
 - `127.0.0.1     crm_app.local`
 
+### Run the Docker
+docker-compose up -d --build nginx
+Open the browser and go to https://crm_app.local:44301/
+
 ## Usage
-To get started, make sure you have [Docker installed](https://docs.docker.com/docker-for-mac/install/) on your system, and then copy this directory to a desired location on your development machine.
-
-Next, open the .env file and update any settings (e.g., versions & exposed ports) to match your desired development environment.
-
-Then, navigate in your terminal to that directory, and spin up the containers for the full web server stack by running `docker-compose up -d --build nginx`.
-
-After that completes, run the following to install and compile the dependencies for the application:
-
-- `docker-compose run --rm composer install`
-- `docker-compose run --rm npm install`
-- `docker-compose run --rm npm run dev`
 
 When the container network is up, the following services and their ports are available to the host machine:
 
@@ -103,9 +96,26 @@ You can create an interactive shell by doing one of the following:
 - `docker-compose run -it --entrypoint /bin/bash <SERVICE>`
 -  `docker compose exec -it <SERVICE> /bin/sh`
 
-Open the browser and go to https://crm_app.local:44301/
+## Laravel Configuration
 
+In the code folder, Copy `.env_example` to `.env` and set the following variables:
 
+APP_URL=https://crm_app.local:44301/
 
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=abc_db
+DB_USERNAME=laravel
+DB_PASSWORD=secret
 
+SESSION_DRIVER=redis
+CACHE_DRIVER=redis
+REDIS_HOST=redis
 
+After that completes, run the following to install and compile the dependencies for the application. in the docker folder, run:
+- `docker-compose run --rm composer install`
+- `docker-compose run --rm npm install`
+- `docker-compose run --rm npm run dev`
+- `docker-compose run --rm artisan key:generate`
+- `docker-compose run --rm artisan migrate`

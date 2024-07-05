@@ -100,18 +100,18 @@ You can create an interactive shell by doing one of the following:
 
 In the code folder, Copy `.env_example` to `.env` and set the following variables:
 
-APP_URL=https://crm_app.local:44301/
+- `APP_URL=https://crm_app.local:44301/`
 
-DB_CONNECTION=mysql
-DB_HOST=mysql
-DB_PORT=3306
-DB_DATABASE=abc_db
-DB_USERNAME=laravel
-DB_PASSWORD=secret
+- `DB_CONNECTION=mysql`
+- `DB_HOST=mysql`
+- `DB_PORT=3306`
+- `DB_DATABASE=abc_db`
+- `DB_USERNAME=laravel`
+- `DB_PASSWORD=secret`
 
-SESSION_DRIVER=redis
-CACHE_DRIVER=redis
-REDIS_HOST=redis
+- `SESSION_DRIVER=redis`
+- `CACHE_DRIVER=redis`
+- `REDIS_HOST=redis`
 
 After that completes, run the following to install and compile the dependencies for the application. in the docker folder, run:
 - `docker-compose run --rm composer install`
